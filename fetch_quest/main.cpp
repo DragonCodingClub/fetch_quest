@@ -13,11 +13,11 @@ int main(int argc, char* args[]){
 				running=false;
 				break;
 			}
-            else if(e.type==SDL_KEYDOWN){
-                if(e.key.keysym.sym==SDLK_F11) window.toggleFullscreen();
-            }
+			else if(e.type==SDL_KEYDOWN){
+				if(e.key.keysym.sym==SDLK_F11) window.toggleFullscreen();
+			}
 			else if(e.type==SDL_WINDOWEVENT && e.window.event==SDL_WINDOWEVENT_SIZE_CHANGED){
-                window.setSize(e);
+				window.setSize(e);
 			}
 		}
 		//clear renderer
@@ -29,7 +29,7 @@ int main(int argc, char* args[]){
 		SDL_RenderPresent(window.ren);
 		//regulate frame rate
 		Uint32 nextFrameTicks=(frame)*1000.0/60;
-        if(nextFrameTicks>SDL_GetTicks()) SDL_Delay(nextFrameTicks-SDL_GetTicks());
+		if(nextFrameTicks>SDL_GetTicks()) SDL_Delay(nextFrameTicks-SDL_GetTicks());
 	}
 	return 0;
 }
