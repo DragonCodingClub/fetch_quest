@@ -44,11 +44,11 @@ void World::max45(){
 		for(int x=0; x<w; x++){
 			for(int y=0; y<h; y++){
 				int sum=0;
-                for(int i=-1; i<=1; i++){
-                    for(int j=-1; j<=1; j++){
+				for(int i=-1; i<=1; i++){
+					for(int j=-1; j<=1; j++){
 						if(!(y+j==0 || y+j==h)) sum+=land[(x+w+i)%w][y+j]%2;
-                    }
-                }
+					}
+				}
 				if((sum>4) != (land[x][y]%2)){
 					land[x][y]+=2;
 					changed=true;
@@ -57,7 +57,7 @@ void World::max45(){
 		}
 		for(int x=0; x<w; x++)
 			for(int y=0; y<h; y++)
-                if(land[x][y]>1) land[x][y]=3-land[x][y];
+		if(land[x][y]>1) land[x][y]=3-land[x][y];
 	}while(changed);
 }
 void World::clearExtraIslands(){
@@ -96,7 +96,7 @@ void World::draw(){
 			square.h=(y+1)*scale-square.y+1;
 			square.x+=window.xOffset;
 			square.y+=window.yOffset;
-            SDL_RenderFillRect(window.ren,&square);
+			SDL_RenderFillRect(window.ren,&square);
 		}
 	}
 }
